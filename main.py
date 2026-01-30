@@ -2,8 +2,8 @@ import streamlit as st
 from langchain_openai import ChatOpenAI
 
 # Title and description
-st.title("🤖 Satvik-GPT")
-st.markdown("🚀 Generate LinkedIn posts on Generative AI like [Satvik Paramkusham](https://www.linkedin.com/in/satvik-paramkusham/)") 
+st.title("🤖 Saparja-GPT")
+st.markdown("🚀 Generate LinkedIn posts on Generative AI like [Saparja Dey](https://www.linkedin.com/in/saparjadey/)") 
 st.markdown("❤️ Powered by GPT-4o fine-tuned model.")
 
 # Text input for topic
@@ -11,13 +11,14 @@ topic = st.text_input("Please enter the topic")
 
 st.code("""
             Try:
-            Explain Transformers Architecture
-            How does RAG work?
+            Explain Agentic AI Security and IAM
+            How does Identity Orchestration simplify IAM specific tasks?
+            How can IAM concepts be used to secure Agentic AI Usage?
             """, language= None)
 
 # Initialize the models
 base_model = ChatOpenAI(model="gpt-4o-2024-08-06")
-ft_model = ChatOpenAI(model="ft:gpt-4o-2024-08-06:personal::AKSobHDd")
+ft_model = ChatOpenAI(model="ft:gpt-4o-2024-08-06:personal:aiwriter:D3busZlo")
 
 def generate_linkedin_post(prompt, base_model=base_model, ft_model=ft_model):
     response1 = base_model.invoke(prompt)
@@ -36,7 +37,7 @@ if st.button("Generate Posts"):
             st.markdown(f'<div class="output-text">{base_response}</div>', unsafe_allow_html=True)
         
         with col2:
-            st.subheader("Satvik-GPT (Fine-tuned Model)")
+            st.subheader("Saparja-GPT (Fine-tuned Model)")
             st.markdown(f'<div class="output-text">{ft_response}</div>', unsafe_allow_html=True)
     else:
         st.warning("Please enter a topic before generating posts.")
